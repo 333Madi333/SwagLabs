@@ -14,10 +14,10 @@ Feature: Home page scenarios
     When I click Add to Cart button toggle should change Remove
 
   Scenario: Verify social media buttons are working
-    When I click FaceBook button
-    Then Title of the page should be Sauce Labs | Facebook
-    When I click LinkedIn button
-    Then Title of the page should be Sign In | LinkedIn
-    When I click Twitter button
-    Then Title of the page should be Twitter
+    When I click "FaceBook" button
+    Then Title of the page should contain "Facebook"
+    When I click "LinkedIn" button
+    Then Title of the page should contain "LinkedIn"
+    When I click "Twitter" button
+    Then Title of the page should contain "Twitter"
 

@@ -24,22 +24,11 @@ public class HomeSteps {
         Assert.assertTrue(impl.getPage().removeBtn.isDisplayed());
     }
 
-    @When("I click Twitter button")
-    public void i_click_twitter_button() throws InterruptedException {
-        impl.getPage().twitterBtn.click();
-        Thread.sleep(3000);
-    }
 
     @Then("Title of the page should be Twitter")
     public void title_of_the_page_should_be_twitter() throws InterruptedException {
 //          Assert.assertEquals("Sauce Labs (@saucelabs) / Twitter", SeleniumUtils.switchToNextWindowGetTitle());
         Assert.assertTrue(SeleniumUtils.switchToNextWindowGetTitle().contains("Twitter"));
-    }
-
-    @When("I click FaceBook button")
-    public void i_click_face_book_button() throws InterruptedException {
-        impl.getPage().facebookBtn.click();
-//        Thread.sleep(3000);
     }
 
     @Then("Title of the page should be Sauce Labs | Facebook")
@@ -48,16 +37,19 @@ public class HomeSteps {
         Assert.assertTrue(SeleniumUtils.switchToNextWindowGetTitle().contains("Facebook"));
     }
 
-    @When("I click LinkedIn button")
-    public void i_click_linked_in_button() throws InterruptedException {
-        impl.getPage().linkedidBtn.click();
-//        Thread.sleep(3000);
-    }
-
     @Then("Title of the page should be Sign In | LinkedIn")
     public void title_of_the_page_should_be_sign_in_linked_in() {
 //        Assert.assertEquals("Sign In | LinkedIn", SeleniumUtils.switchToNextWindowGetTitle());
         Assert.assertTrue(SeleniumUtils.switchToNextWindowGetTitle().contains("LinkedIn"));
     }
 
+    @When("I click {string} button")
+    public void iClickButton(String buttonName) {
+        impl.iClickOnButton(buttonName);
+    }
+
+    @Then("Title of the page should contain {string}")
+    public void titleOfThePageShouldContain(String text) {
+        Assert.assertTrue(SeleniumUtils.switchToNextWindowGetTitle().contains(text));
+    }
 }

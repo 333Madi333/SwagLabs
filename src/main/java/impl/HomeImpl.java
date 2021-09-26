@@ -14,12 +14,11 @@ public class HomeImpl {
 
     public void iClickOnButton(String buttonName) {
         switch (buttonName.toLowerCase()){
-            case "twitter": getPage().twitterBtn.click();
-                break;
             case "facebook": getPage().facebookBtn.click();
                 break;
             case "linkedin": getPage().linkedidBtn.click();
                 break;
+            case "twitter": getPage().twitterBtn.click();
             default:
                 System.out.println("button was not found");
         }
