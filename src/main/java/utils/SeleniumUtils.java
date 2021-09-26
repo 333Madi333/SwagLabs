@@ -35,7 +35,7 @@ public class SeleniumUtils {
             }
         }
         title = WebDriverUtils.getDriver().getTitle();
-
+        WebDriverUtils.closeDriver();
         WebDriverUtils.getDriver().switchTo().window(currentWindow);
         return title;
 

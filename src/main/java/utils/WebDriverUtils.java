@@ -32,7 +32,7 @@ public class WebDriverUtils {
     public static void closeDriver(){
         if (driver != null){
             driver.close();
-            driver = null;
+//            driver = null;
         }
     }
 
@@ -52,8 +52,13 @@ public class WebDriverUtils {
         }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
     }
+
+//    public WebElement waitForVis (WebElement element){
+//        WebDriverWait wait = new WebDriverWait(driver, 5);
+//        return wait.until(ExpectedConditions.visibilityOf(element));
+//    }
 
 
 }
