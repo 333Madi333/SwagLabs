@@ -17,7 +17,6 @@ public class LoginSteps {
     @When("I input {string} as {string}")
     public void i_input_as(String inputFieldName, String value) {
        impl.fillInputField(inputFieldName, value);
-
     }
     @When("I click Login button")
     public void i_click_login_button() {

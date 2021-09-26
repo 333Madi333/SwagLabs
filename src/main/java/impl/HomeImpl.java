@@ -14,12 +14,14 @@ public class HomeImpl {
 
     public void iClickOnButton(String buttonName) {
         switch (buttonName.toLowerCase()){
-            case "access db":
+            case "twitter": getPage().twitterBtn.click();
                 break;
-
+            case "facebook": getPage().facebookBtn.click();
+                break;
+            case "linkedin": getPage().linkedidBtn.click();
+                break;
             default:
                 System.out.println("button was not found");
         }
-        SeleniumUtils.switchToNextWindow();
     }
 }

@@ -30,4 +30,5 @@ public class HomePage {
     @FindBy(xpath = "//li[@class='social_linkedin']")
     public WebElement linkedidBtn;
 
+
 }

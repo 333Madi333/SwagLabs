@@ -1,7 +1,9 @@
 package utils;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Set;
 
@@ -20,7 +22,27 @@ public class SeleniumUtils {
                 WebDriverUtils.getDriver().switchTo().window(each);
             }
         }
+
     }
+    public static String switchToNextWindowGetTitle(){
+        String title="";
+        String currentWindow = WebDriverUtils.getDriver().getWindowHandle();
+        Set<String> allWindows = WebDriverUtils.getDriver().getWindowHandles();
+
+        for(String each: allWindows){
+            if(!each.equals(currentWindow)){
+                WebDriverUtils.getDriver().switchTo().window(each);
+            }
+        }
+        title = WebDriverUtils.getDriver().getTitle();
+
+        WebDriverUtils.getDriver().switchTo().window(currentWindow);
+        return title;
+
+    }
+
+
+
 
     public static void selectByVisibleText(WebElement element, String textValue){
         Select select = new Select(element);
